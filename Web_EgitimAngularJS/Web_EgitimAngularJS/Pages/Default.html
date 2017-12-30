@@ -1,0 +1,14 @@
+﻿<div class="center_content">
+    <div class="center_title_bar">Urunler</div>
+
+    <div class="prod_box" ng-repeat="item in Urunler">
+        <div class="top_prod_box"></div>
+        <div class="center_prod_box">
+            <div class="product_title"><a href="details.html">{{item.Adi}}</a></div>
+            <div class="product_img"><a href="details.html"><img width="100" src="{{item.ResimUrl}}" alt="" border="0" /></a></div>
+            <div class="prod_price"><span class="price">{{item.Fiyat}} TL</span></div>
+        </div>
+        <div class="bottom_prod_box"></div>
+        <div class="prod_details_tab">  <a ui-sref="urunDetay({urunID: item.TabloID})" class="prod_details">details</a> </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+﻿<div class="center_content">
+    <div class="center_title_bar">Contact Us</div>
+    <div class="prod_box_big">
+        <div class="top_prod_box_big"></div>
+        <div class="center_prod_box_big">
+            <div class="contact_form">
+                <div class="form_row">
+                    <md-button class="md-primary md-raised" ng-click="KategoriShowAdvanced()">
+                        Kategoriler
+                    </md-button><md-button class="md-primary md-raised" ng-click="TedarikciShowAdvanced()">
+                        Tedarikciler
+                    </md-button>
+                </div>
+                <p>Urun Kayıt</p>
+                <div class="form_row">
+                    <label class="contact"><strong>Kategori : </strong></label>
+                    <select class="form-control" required style="margin-top:0.5%;"
+                            ng-model="urun.KategoriID"
+                            ng-options="item.TabloID as item.KategoriAdi for item in Kategoriler">
+                        <option value="" selected>Kategori Seçiniz</option>
+                    </select>
+                </div>
+                <div class="form_row">
+                    <label class="contact"><strong>Tedarikci : </strong></label>
+                    <select class="form-control" required style="margin-top:0.5%;"
+                            ng-model="urun.TedarikciID"
+                            ng-options="item.TabloID as item.TedarikciAdi for item in Tedarikciler">
+                        <option value="" selected>Tedarikci Seçiniz</option>
+                    </select>
+                </div>
+                <div class="form_row">
+                    <label class="contact"><strong>Urun Adi : </strong></label>
+                    <input type="text" class="contact_input" ng-model="urun.Adi" />
+                </div>
+                <div class="form_row">
+                    <label class="contact"><strong>Urun Icerik :</strong></label>
+                    <input type="text" class="contact_input" ng-model="urun.Icerik" />
+                </div>
+                <div class="form_row">
+                    <label class="contact"><strong>Kdv : </strong></label>
+                    <input type="text" class="contact_input" ng-model="urun.Kdv" />
+                </div>
+                <div class="form_row">
+                    <label class="contact"><strong>Fiyat : </strong></label>
+                    <input type="text" class="contact_input" ng-model="urun.Fiyat" />
+                </div>
+                <div class="form_row">
+                    <label class="contact"><strong>Adet : </strong></label>
+                    <input type="text" class="contact_input" ng-model="urun.Adet" />
+                </div>
+                <div class="form_row">
+                    <label class="contact"><strong>Resim URL : </strong></label>
+                    <input type="text" class="contact_input" ng-model="urun.ResimUrl" />
+                </div>
+                <div class="form_row">
+                    <button class="contact" ng-click="UrunEkleFunction();">KAYDET</button>
+                </div>
+            </div>
+        </div>
+        <div class="bottom_prod_box_big"></div>
+    </div>
+</div>

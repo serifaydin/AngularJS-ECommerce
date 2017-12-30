@@ -1,0 +1,79 @@
+﻿<md-dialog aria-label="Mango (Fruit)">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>TEDARIKCI YONETIM</h2>
+                <span flex></span>
+                <md-button class="md-icon-button">
+                    <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+
+                <div class="md-dialog-content">
+                    <div class="prod_box_big">
+                        <div class="top_prod_box_big"></div>
+                        <div class="center_prod_box_big">
+                            <div class="contact_form">
+                                <div class="form_row">
+                                    <label class="contact"><strong>Tedarikci Adı:</strong></label>
+                                    <input type="text" class="contact_input" ng-model="tedarikci.TedarikciAdi" />
+                                </div>
+                                <div class="form_row">
+                                    <label class="contact"><strong>Adres:</strong></label>
+                                    <input type="text" class="contact_input" ng-model="tedarikci.Adres" />
+                                </div>
+                                <div class="form_row">
+                                    <label class="contact"><strong>Vergi No:</strong></label>
+                                    <input type="text" class="contact_input" ng-model="tedarikci.VergiNo" />
+                                </div>
+
+
+                                <div class="form_row">
+                                    <button ng-click="TedarikciEkleGuncelleFunction();">{{TedarikcibtnText}}</button>
+                                    <button ng-click="iptal();">İptal</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom_prod_box_big"></div>
+                    </div>
+                </div>
+                <div>
+                    <table width="100%" border="1" class="table-layout">
+                        <thead>
+                            <tr>
+                                <td>Index</td>
+                                <td>Tedarikci Adı</td>
+                                <td>Adres</td>
+                                <td>Vergi no</td>
+                                <td>Sil</td>
+                                <td>Guncelle</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="item in Tedarikciler">
+                                <td>{{$index}}</td>
+                                <td>{{item.TedarikciAdi}}</td>
+                                <td>{{item.Adres}}</td>
+                                <td>{{item.VergiNo}}</td>
+                                <td><button ng-click="TedarikciSilFunction($index,item.TabloID)">Sil</button></td>
+                                <td><button ng-click="TedarikciGuncelleItem(item.TabloID)">Güncelle</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button ng-click="hide()">
+                Kapat
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
